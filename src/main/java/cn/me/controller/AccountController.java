@@ -33,7 +33,7 @@ public class AccountController {
             return "account/login";
         }
 
-        return "redirect:/product/queryItem.do";
+        return "redirect:/goods/list.do";
     }
 
     @RequestMapping("/list.do")
