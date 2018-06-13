@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.me.dao.AccountDao">
+    <select id="findAllAccount" resultType="account">
+        select * from account;
+    </select>
+
+    <select id="findAccountById" resultType="account" parameterType="integer">
+        select * from account where id = #{id}
+    </select>
+
+    <select id="findAccountByName" resultType="account" parameterType="string">
+        select * from account where name like '%${value}%'
+    </select>
+</mapper>

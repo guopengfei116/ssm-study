@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 配置数据类型别名，这样在mapper里配置返回值与参数时就不用写全路径class了 -->
+    <typeAliases>
+        <package name="cn.me.model"></package>
+    </typeAliases>
+
+</configuration>

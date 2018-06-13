@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 数据库属性配置文件 -->
+    <properties resource="mybatis/db.properties"></properties>
+
+    <!-- 配置数据类型别名，这样在mapper里配置返回值与参数时就不用写全路径class了 -->
+    <typeAliases>
+        <package name="cn.me.model"></package>
+    </typeAliases>
+
+    <!-- 运行环境：数据库连接与操作标准 -->
+    <environments default="developer">
+        <environment id="developer">
+            <transactionManager type="jdbc"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}"></property>
+                <property name="url" value="${db.url}"></property>
+                <property name="username" value="${db.username}"></property>
+                <property name="password" value="${db.password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- sql语句所在位置 -->
+    <mappers>
+        <!-- 配置包时，mapper文件必须和interface文件在同一目录，并且文件名称一样 -->
+        <package name="cn.me.dao"></package>
+        <!-- 单文件的方式，文件可以在任意位置进行存放 -->
+        <!--<mapper resource="mapper/account.xml"></mapper>-->
+    </mappers>
+</configuration>
